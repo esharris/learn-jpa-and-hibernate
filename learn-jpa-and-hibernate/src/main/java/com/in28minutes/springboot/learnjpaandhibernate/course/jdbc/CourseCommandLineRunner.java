@@ -5,18 +5,22 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.in28minutes.springboot.learnjpaandhibernate.course.Course;
+import com.in28minutes.springboot.learnjpaandhibernate.course.CourseJpaRepository;
 
 @Component
-public class CourseJdbcCommandLineRunner implements CommandLineRunner {
+public class CourseCommandLineRunner implements CommandLineRunner {
+
+//	@Autowired
+//	private CourseJdbcRepository repository;
 
 	@Autowired
-	private CourseJdbcRepository repository;
+	private CourseJpaRepository repository;
 
 	@Override
 	public void run(String... args) throws Exception {
-		repository.insert(new Course(1, "Learn AWS Now!", "in28minutes"));
-		repository.insert(new Course(2, "Learn Azure Now!", "in28minutes"));
-		repository.insert(new Course(3, "Learn DevOps Now!", "in28minutes"));
+		repository.insert(new Course(1, "Learn AWS Jpa!", "in28minutes"));
+		repository.insert(new Course(2, "Learn Azure Jpa!", "in28minutes"));
+		repository.insert(new Course(3, "Learn DevOps Jpa!", "in28minutes"));
 
 		repository.deleteById(1);
 
