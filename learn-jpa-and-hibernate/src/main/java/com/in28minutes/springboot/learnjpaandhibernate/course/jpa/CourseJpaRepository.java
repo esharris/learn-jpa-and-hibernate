@@ -1,6 +1,8 @@
-package com.in28minutes.springboot.learnjpaandhibernate.course;
+package com.in28minutes.springboot.learnjpaandhibernate.course.jpa;
 
 import org.springframework.stereotype.Repository;
+
+import com.in28minutes.springboot.learnjpaandhibernate.course.Course;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
