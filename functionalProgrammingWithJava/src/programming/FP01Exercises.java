@@ -6,9 +6,9 @@ public class FP01Exercises {
 
 	public static void main(String[] args) {
 
-//		List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
+		List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
 //		printOddNumbersInListFunctional(numbers);
-
+		printCubesOfOddNumbersInListFunctional(numbers);
 		List<String> courses = //
 				List.of("Spring", //
 						"Spring Boot", //
@@ -22,7 +22,8 @@ public class FP01Exercises {
 
 //		courses.stream().forEach(System.out::println);
 //		courses.stream().filter(course -> course.contains("Spring")).forEach(System.out::println);
-		courses.stream().filter(course -> course.length() >= 4).forEach(System.out::println);
+//		courses.stream().filter(course -> course.length() >= 4).forEach(System.out::println);
+		courses.stream().map(course -> course + " " + course.length()).forEach(System.out::println);
 	}
 
 	private static void printOddNumbersInListFunctional(List<Integer> numbers) {
@@ -30,4 +31,10 @@ public class FP01Exercises {
 		numbers.stream().filter(number -> number % 2 == 1).forEach(System.out::println);
 	}
 
+	private static void printCubesOfOddNumbersInListFunctional(List<Integer> numbers) {
+
+		numbers.stream()
+//		.filter(FP01Functional::isEven)
+				.filter(number -> number % 2 == 1).map(number -> number * number * number).forEach(System.out::println);
+	}
 }
